@@ -30,7 +30,8 @@ const checkIfUrlExists = async (url) => {
 const createShortUrl = async (url) => {
     try {
       const id = await generateUniqueId();
-      const shortUrl = `http://localhost:8000/${id}`;
+      const shortUrl = `https://url-short-server.herokuapp.com/${id}`;
+      // const shortUrl = `http://localhost:8000/${id}`;
       const newUrl = {
         original_url: url,
         short_url: shortUrl,
