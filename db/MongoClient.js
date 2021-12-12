@@ -1,6 +1,9 @@
+require('dotenv').config()
 const {MongoClient} = require('mongodb')
+const dbUser = process.env.DB_USER
+const dbPassword = process.env.DB_PASSWORD
 // const url = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000";
-const url = 'mongodb+srv://admin:admin123@cluster0.itq58.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const url = `mongodb+srv://${dbUser}:${dbPassword}@cluster0.itq58.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 let client = new MongoClient(url, {useNewUrlParser: true, useUnifiedTopology: true,})
 const connectDb = async() => {
